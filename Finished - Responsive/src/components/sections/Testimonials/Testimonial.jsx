@@ -1,52 +1,36 @@
-import Testimonial from "./Testimonial";
-import { testimonials } from "../../../utils/constants";
+import { TfiQuoteLeft } from "react-icons/tfi";
 
-function Testimonials() {
+function Testimonial({ testimonial }) {
   return (
-    <section className="m-auto py-12 sm:py-16 xl:py-24 max-w-[90rem]">
-      <h2 className="px-4 sm:px-8 md:px-16 xl:px-24 pb-12 sm:pb-14 md:pb-16 font-bold text-[2rem]/[2.5rem] text-primary-500 sm:text-4xl md:text-5xl xl:text-[3.5rem]/[4rem] tracking-tight">
-        Listen to what our{" "}
-        <span className="underline underline-offset-2 decoration-8 decoration-accent-500">
-          satisfied
-        </span>{" "}
-        <br className="sm:block hidden" />
-        clients have to say
-      </h2>
-
-      {/* TESTIMONIAL ROW 1 */}
-      <div className="relative">
-        <div className="top-0 left-0 z-10 absolute bg-gradient-to-r from-white to-transparent sm:w-32 xl:w-64 h-full" />
-        <div className="top-0 right-0 z-10 absolute bg-gradient-to-l from-white to-transparent sm:w-32 xl:w-64 h-full" />
-
-        <div className="bg-white mb-4 lg:mb-6 whitespace-nowrap overflow-hidden">
-          <div className="inline-block whitespace-nowrap animate-translate-x-reverse">
-            {testimonials.slice(0, 4).map((testimonial) => (
-              <Testimonial testimonial={testimonial} key={testimonial.name} />
-            ))}
-          </div>
-          <div className="inline-block whitespace-nowrap animate-translate-x-reverse">
-            {testimonials.slice(0, 4).map((testimonial) => (
-              <Testimonial testimonial={testimonial} key={testimonial.name} />
-            ))}
-          </div>
+    <figure className="inline-block bg-white-shade mx-2 lg:mx-4 px-6 lg:px-8 py-6 lg:py-8 rounded-xl w-96">
+      <blockquote className="text-wrap">
+        <div className="flex justify-between items-start mb-2">
+          <TfiQuoteLeft className="w-12 lg:w-14 h-12 lg:h-14 text-primary-500 overflow-visible stroke-[.02rem]" />
+          <p className="bg-gradient-to-t from-accent-500 to-accent-200 px-3 py-1 rounded-md font-medium text-primary-500 text-sm tracking-tight">
+            {testimonial.program}
+          </p>
         </div>
 
-        {/* TESTIMONIAL ROW 2 */}
-        <div className="bg-white whitespace-nowrap overflow-hidden">
-          <div className="inline-block whitespace-nowrap animate-translate-x-reverse-slowed">
-            {testimonials.slice(4).map((testimonial) => (
-              <Testimonial testimonial={testimonial} key={testimonial.name} />
-            ))}
-          </div>
-          <div className="inline-block whitespace-nowrap animate-translate-x-reverse-slowed">
-            {testimonials.slice(4).map((testimonial) => (
-              <Testimonial testimonial={testimonial} key={testimonial.name} />
-            ))}
+        <p className="mb-6 lg:mb-8 font-medium text-primary-500 tracking-tight">
+          {testimonial.description}
+        </p>
+
+        <div className="flex items-center gap-x-4">
+          <img
+            src={testimonial.image}
+            alt={testimonial.name}
+            className="rounded-full w-14 lg:w-16 h-14 lg:h-16"
+          />
+          <div>
+            <cite className="font-semibold not-italic tracking-tight">
+              {testimonial.name}
+            </cite>
+            <p className="text-primary-50 text-sm">{testimonial.title}</p>
           </div>
         </div>
-      </div>
-    </section>
+      </blockquote>
+    </figure>
   );
 }
 
-export default Testimonials;
+export default Testimonial;

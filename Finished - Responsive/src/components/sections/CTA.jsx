@@ -8,7 +8,7 @@ function CTA() {
       <div className="relative flex flex-col items-center bg-primary-500 px-8 py-16 sm:py-24 lg:py-28 rounded-2xl overflow-hidden">
         <div className="top-0 absolute bg-accent-500 w-1/5 h-2" />
         <div className="lg:left-[4%] absolute bg-gradient-to-l from-white to-transparent opacity-20 blur-2xl rounded-[50%] w-[50rem] h-28 -rotate-45" />
-        <div className="lg:left-[35%] absolute bg-gradient-to-l from-white to-transparent opacity-20 blur-2xl rounded-[50%] w-[40rem] h-28 invisible -rotate-45 lg:visible" />
+        <div className="lg:visible lg:left-[35%] absolute bg-gradient-to-l from-white to-transparent opacity-20 blur-2xl rounded-[50%] w-[40rem] h-28 invisible -rotate-45" />
 
         <h3 className="mb-4 font-bold text-[2rem]/[2.5rem] text-center text-white sm:text-4xl md:text-5xl/[4rem] xl:text-[3.5rem]/[4rem] tracking-tight">
           Engage without limits

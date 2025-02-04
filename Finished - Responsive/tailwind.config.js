@@ -1,17 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      sans: ["Poppins", "sans-serif"],
-    },
     extend: {
       screens: {
         "pricing-break": "840px",
       },
       colors: {
-        // setting up our personal tailwind utility color classes
-
         // Primary
         "primary-800": "#1E1B22",
         "primary-700": "#221F26",
@@ -40,9 +35,12 @@ export default {
         },
       },
       animation: {
-        "translate-x-reverse": "translate-x-reverse 30s linear infinite",
-        "translate-x-reverse-slowed": "translate-x-reverse 50s linear infinite",
+        "translate-x-reverse": "translate-x-reverse 50s linear infinite",
+        "translate-x-reverse-slowed": "translate-x-reverse 30s linear infinite",
       },
+    },
+    fontFamily: {
+      sans: ["Poppins", "sans-serif"],
     },
   },
   plugins: [],

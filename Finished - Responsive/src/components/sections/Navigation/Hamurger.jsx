@@ -1,6 +1,6 @@
 import hamburger from "../../../assets/hamburger.svg";
 
-function Hamburger() {
+function Hamurger() {
   return (
     <button className="lg:hidden">
       <img
@@ -12,4 +12,4 @@ function Hamburger() {
   );
 }
 
-export default Hamburger;
+export default Hamurger;

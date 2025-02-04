@@ -1,6 +1,6 @@
 import Yadora from "../../../assets/logo.svg";
 import { links } from "../../../utils/constants";
-import Hamburger from "../../sections/Navigation/Hamburger";
+import Hamurger from "./Hamurger";
 
 function Navigation() {
   return (
@@ -9,7 +9,7 @@ function Navigation() {
         <a href="#">
           <img
             src={Yadora}
-            alt="Yadora Logo"
+            alt="Yadora logo"
             className="inline-block mr-8 h-7"
           />
         </a>
@@ -40,7 +40,7 @@ function Navigation() {
         </button>
       </nav>
 
-      <Hamburger />
+      <Hamurger />
     </section>
   );
 }

@@ -5,7 +5,7 @@ function PricingCard({ card, paymentPlan }) {
     container: card.primary ? "pb-12 lg:pb-14" : "pb-10 lg:my-2",
     bulletColor: card.primary ? "stroke-accent-500" : "stroke-white",
     cta: card.primary
-      ? "bg-accent-500 from-accent-500 to-accent-200"
+      ? "bg-gradient-to-t bg-accent-500 from-accent-500 to-accent-200"
       : "bg-white",
     ctaWrapper: card.primary
       ? "bg-gradient-to-b from-accent-500 to-accent-200 p-[.125rem] rounded-2xl \
@@ -29,7 +29,7 @@ function PricingCard({ card, paymentPlan }) {
 
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl bg-primary-500 px-8 pt-8 ${pclass.container}`}
+      className={`bg-primary-500 px-8 pt-8 rounded-2xl relative overflow-hidden ${pclass.container}`}
     >
       {/* aboslutely positioned elements */}
       {card.primary && (
@@ -43,6 +43,7 @@ function PricingCard({ card, paymentPlan }) {
           <div className="top-[30%] left-[30%] absolute bg-gradient-to-l from-white to-transparent opacity-20 blur-2xl rounded-[50%] w-[30rem] h-28 -rotate-45" />
         </>
       )}
+
       <p className="opacity-80 mb-12 px-6 py-2 border rounded-2xl max-w-min text-sm text-white">
         {card.program}
       </p>
@@ -59,7 +60,7 @@ function PricingCard({ card, paymentPlan }) {
         {card.bullets.map((bullet) => (
           <li key={bullet} className="flex items-center gap-x-2">
             <CiCircleCheck
-              className={`h-6 w-6 stroke-1 text-white ${pclass.bulletColor}`}
+              className={`w-6 h-6 text-white stroke-1 ${pclass.bulletColor}`}
             />
             <p className="text-white">{bullet}</p>
           </li>
@@ -67,7 +68,7 @@ function PricingCard({ card, paymentPlan }) {
       </ul>
       <div className={pclass.ctaWrapper}>
         <button
-          className={`w-full rounded-2xl bg-gradient-to-t py-4 text-primary-500 transition-all duration-200 hover:bg-accent-500 hover:text-white ${pclass.cta}`}
+          className={`text-primary-500 py-4 w-full rounded-2xl  hover:bg-accent-500 transition-all duration-200 hover:text-white ${pclass.cta}`}
         >
           {card.cta}
         </button>
